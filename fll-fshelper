@@ -415,9 +415,7 @@ for my $device ( sort keys %p ) {
 
 	# device name as default/fallback
 	$name ||= $device;
-	$mount ||= "/media/$device";
-	# fixup mount point name
-	$mount =~ s|/media/dev/|/media/|;
+	($mount ||= "/media/$device") =~ s|/dev/||;
 
 	if ($fstype eq 'ntfs') {
 		$options .= ',ro,dmask=0022,fmask=0133';
