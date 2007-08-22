@@ -1,4 +1,4 @@
-fll-fshelper (1.0.1) UNRELEASED; urgency=low
+fll-fshelper (1.0.1) unstable; urgency=low
 
   * Add "--install-gui" option to assist in filtering our partition candidates
     for install-gui.
