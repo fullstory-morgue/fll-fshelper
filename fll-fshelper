@@ -257,7 +257,7 @@ if (-f '/proc/partitions') {
 	while (<PARTITIONS>) {
 		chomp;
 		dbg $_;
-		if(/\s+(\d+)\s+(\d+)\s+(\d+)\s+(.+)/) {
+		if (/\s+(\d+)\s+(\d+)\s+(\d+)\s+(.+)/) {
 			# locsmif has some other tweak that can go here
 			unless ($3 == 1 or $4 =~ /^(ram|cloop|loop)[0-9]*$/) {
 				$p{"/dev/$4"} = vol_id "/dev/$4";
@@ -275,7 +275,7 @@ if (-f '/proc/partitions') {
 if (-f '/proc/mounts') {
 	open(MOUNTS, '<', '/proc/mounts')
 		or die "Cannot open /proc/mounts for reading: $!\n";
-	while(<MOUNTS>) {
+	while (<MOUNTS>) {
 		chomp;
 		dbg $_;
 		my ($device, $mount, $fstype, $options, $dump, $pass) = split;
@@ -453,7 +453,7 @@ for my $device ( sort keys %p ) {
 
 if ($opts{'install-gui'}) {
 	my $line = 0;
-	while(exists $fstab[$line]) {
+	while (exists $fstab[$line]) {
 		dbg $fstab[$line];
 		for ($fstab[$line]) {
 			(/^#/ or not /./) and last;
