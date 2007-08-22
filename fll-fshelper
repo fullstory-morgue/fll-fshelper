@@ -237,7 +237,7 @@ if ($opts{'write-fstab'}) {
 	'# /etc/fstab - static information about the filesystems - fstab(5)',
 	'#',
 	'# /etc/fstab is only read by programs, and not written; it is the duty of the',
-	'# system administrator to properly create and maintain this file.',
+	'# system administrator to properly and maintain this file.',
 	'#',
 	'# Instead  of giving the device explicitly, one may indicate the filesystem',
 	'# that is to be mounted by its UUID or VOLUME label. This will make the',
