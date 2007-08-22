@@ -270,6 +270,20 @@ if (-f '/proc/partitions') {
 }
 
 #-------------------------------------------------------------------#
+# just for install-gui
+
+if ($opts{'install-gui'}) {
+	for my $device ( sort keys %p ) {
+		my ($usage, $fstype) = @{$p{$device}}{'usage', 'type'};
+		if ($fstype and $fstype !~ /^(unknown|iso9660|udf|squashfs)$/ and 
+			$usage and $usage eq 'filesystem') {
+			print join('-', $device, $fstype), "\n";
+		}
+	}
+	exit 0;
+}
+
+#-------------------------------------------------------------------#
 # process mounted volumes
 
 if (-f '/proc/mounts') {
@@ -446,28 +460,6 @@ for my $device ( sort keys %p ) {
 	push @fstab, '';
 
 	add_mnt_pnt $mount;
-}
-
-#-------------------------------------------------------------------#
-# just for install-gui
-
-if ($opts{'install-gui'}) {
-	my $line = 0;
-	while (exists $fstab[$line]) {
-		dbg $fstab[$line];
-		for ($fstab[$line]) {
-			(/^#/ or not /./) and last;
-
-			my ($device, $mount, $fstype, $options, $dump, $pass) = split;
-		
-			if ($fstype ne 'swap') {
-				print $device . '-' . $fstype, "\n";
-			}
-		}
-		
-		$line++
-	}
-	exit 0;
 }
 
 #-------------------------------------------------------------------#
