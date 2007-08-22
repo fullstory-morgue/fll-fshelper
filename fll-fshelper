@@ -244,7 +244,7 @@ if ($opts{'write-fstab'}) {
 	'# system more robust: adding or removing a disk changes the disk device name',
 	'# but not the filesystem UUID or VOLUME label.',
 	'#',
-	"# <device>\t<mountpoint>\t<type>\t\t<options>\t<dump>\t<pass>",
+	"# <filesystem>\t<mountpoint>\t<type>\t\t<options>\t<dump>\t<pass>",
 	'',
 );
 
