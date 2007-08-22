@@ -347,9 +347,6 @@ for my $device ( sort keys %p ) {
 
 	# $device info, take a slice of %p
 	my ($usage, $fstype, $label, $label_safe, $uuid) = @{$p{$device}}{'usage', 'type', 'label_enc', 'label_safe', 'uuid_enc'};
-	# support for older udev (< 0.114-1)
-	$label ||= @{$p{$device}}{'label'};
-	$uuid ||= @{$p{$device}}{'uuid'};
 	
 	if (not $fstype or $fstype =~ /(unknown|iso9660|udf|squashfs)/ or 
 		not $usage or $usage !~ /(filesystem|other)/) {
