@@ -390,7 +390,7 @@ for my $device ( sort keys %p ) {
 			next;
 		}
 		else {
-			if ($fstype =~ /^(swap|ext[234]|resierfs|reiser4|jfs|xfs)$/) {
+			if ($fstype =~ /^(swap|ext[234]|reiserfs|reiser4|jfs|xfs)$/) {
 				$name = "UUID=$uuid";
 			}
 			else {
@@ -412,7 +412,7 @@ for my $device ( sort keys %p ) {
 			next;
 		}
 		else {
-			if ($fstype =~ /^(swap|ext[234]|resierfs|reiser4|jfs|xfs)$/) {
+			if ($fstype =~ /^(swap|ext[234]|reiserfs|reiser4|jfs|xfs)$/) {
 				$name = "LABEL=$label";
 			}
 			else {
@@ -451,7 +451,7 @@ for my $device ( sort keys %p ) {
 		$options = 'sw';
 		$mount = 'none';
 	}
-	elsif ($fstype =~ /^(ext[234]|resierfs|reiser4|jfs|xfs)$/) {
+	elsif ($fstype =~ /^(ext[234]|reiserfs|reiser4|jfs|xfs)$/) {
 		$options .= ',noatime';
 	}
 
