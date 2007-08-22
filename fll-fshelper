@@ -195,7 +195,7 @@ sub add_mnt_pnt {
 # process cli arguments
 
 GetOptions(
-	\%opts, 'auto', 'debug', 'fstab=s', 'help', 'labels',
+	\%opts, 'auto', 'debug', 'fstab=s', 'help', 'install-gui', 'labels',
 	'make-mountpoints', 'no-swap', 'quiet', 'uuids', 'write-fstab'
 );
 
@@ -446,6 +446,28 @@ for my $device ( sort keys %p ) {
 	push @fstab, '';
 
 	add_mnt_pnt $mount;
+}
+
+#-------------------------------------------------------------------#
+# just for install-gui
+
+if ($opts{'install-gui'}) {
+	my $line = 0;
+	while(exists $fstab[$line]) {
+		dbg $fstab[$line];
+		for ($fstab[$line]) {
+			(/^#/ or not /./) and last;
+
+			my ($device, $mount, $fstype, $options, $dump, $pass) = split;
+		
+			if ($fstype ne 'swap') {
+				print $device . '-' . $fstype, "\n";
+			}
+		}
+		
+		$line++
+	}
+	exit 0;
 }
 
 #-------------------------------------------------------------------#
