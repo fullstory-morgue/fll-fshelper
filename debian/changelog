@@ -1,3 +1,9 @@
+fll-fshelper (1.0.4) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Aug 2007 00:51:21 +0200
+
 fll-fshelper (1.0.3) unstable; urgency=low
 
   * Fix typo in regexp's, resierfs -> reiserfs.
