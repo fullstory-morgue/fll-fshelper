@@ -1,3 +1,9 @@
+fll-fshelper (1.0.3) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 22 Aug 2007 19:11:39 +0200
+
 fll-fshelper (1.0.2) unstable; urgency=low
 
   * Improve "--install-gui" option, don't exclude removable partitions.
