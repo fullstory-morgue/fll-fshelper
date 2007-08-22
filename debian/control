@@ -1,0 +1,14 @@
+Source: fll-fshelper
+Section: admin
+Priority: optional
+Maintainer: Kel Modderman <kel@otaku42.de>
+Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>
+Build-Depends: cdbs, debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: fll-fshelper
+Architecture: all
+Depends: perl, udev (>= 0.114-2)
+Description: fstab and mountpoint helper
+ fll-fshelper disk partitions, cdrom and floppy devices present in
+ the system and generates /etc/fstab and required mountpoints.
