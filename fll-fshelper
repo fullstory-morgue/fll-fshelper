@@ -370,7 +370,7 @@ for my $device ( sort keys %p ) {
 	
 	# default mount and pass options
 	my $auto = $opts{'auto'} ? 'auto' : 'noauto';
-	my ($options, $dump, $pass) =  ("$auto,users,exec", 0, 2);
+	my ($options, $dump, $pass) =  ("$auto,users,exec", '0', '2');
 
 	# utf-8 support
 	my ($iocs, $nls, $utf8) = ();
